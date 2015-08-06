@@ -1,0 +1,49 @@
+{
+  "name": "AngularES6",
+  "version": "1.0.0",
+  "description": "AngularES6 prototype",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "jspm install",
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 9998 -c-1",
+    "pretest": "npm install",
+    "test": "karma start karma.conf.js",
+    "test-single-run": "karma start karma.conf.js  --single-run",
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "webdriver-manager update",
+    "preprotractor": "npm run update-webdriver",
+    "protractor": "protractor e2e-tests/protractor.conf.js"
+  },
+  "keywords": [
+    "angular",
+    "es6"
+  ],
+  "author": "gdai",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "http-server": "^0.8.0",
+    "jspm": "^0.15.7",
+    "jasmine-core": "^2.3.4",
+    "karma": "~0.12",
+    "karma-chrome-launcher": "^0.1.12",
+    "karma-firefox-launcher": "^0.1.6",
+    "karma-jasmine": "^0.3.5",
+    "karma-junit-reporter": "^0.2.2",
+    "protractor": "^2.1.0",
+    "shelljs": "^0.2.6"
+  },
+  "jspm": {
+    "directories": {},
+    "dependencies": {
+      "angular": "github:angular/bower-angular@^1.4.3",
+      "bootstrap": "github:twbs/bootstrap@^3.3.5"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.1.13",
+      "core-js": "npm:core-js@^0.9.4"
+    }
+  }
+}
