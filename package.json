@@ -2,7 +2,7 @@
   "name": "AngularES6",
   "version": "1.0.0",
   "description": "AngularES6 prototype",
-  "main": "index.js",
+  "main": "config.js",
   "scripts": {
     "postinstall": "jspm install",
     "prestart": "npm install",
@@ -38,6 +38,7 @@
     "directories": {},
     "dependencies": {
       "angular": "github:angular/bower-angular@^1.4.3",
+      "angular-ui-router": "github:angular-ui/ui-router@^0.2.15",
       "bootstrap": "github:twbs/bootstrap@^3.3.5"
     },
     "devDependencies": {

@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Demo with Angular, Babel, ES6 + JSPM</title>
+    <link rel="stylesheet" href="../../jspm_packages/github/twbs/bootstrap@3.3.5/css/bootstrap.min.css">
     <script src="../../jspm_packages/system.js"></script>
     <script src="../../config.js"></script>
-    <script>
-        System.import('./myApp/src/myApp');
-    </script>
 </head>
 <body ng-app="myApp">
-<div>Demo with Angular, Babel, ES6 + JSPM</div>
+<h1>List of GitHub Users</h1>
+
+<div ng-controller="userCtrl as vm">
+    <h3><input type="text" placeholder="Search users" ng-model="vm.filterString"></h3>
+
+    <div>
+        <ul ng-repeat="user in vm.users | filter: vm.filterString" class="list-group">
+            <li class="list-group-item">
+                <div><img src="{{user.avatar_url}}" height="50px;">
+
+                    <div><a href="">{{user.login}}</a></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<ui-view></ui-view>
+<script>
+    System.import('./myApp/src/myApp');
+</script>
 </body>
 </html>
