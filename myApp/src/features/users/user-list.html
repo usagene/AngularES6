@@ -1,0 +1,15 @@
+<div>
+    <h1>List of GitHub Users</h1>
+    <h3><input type="text" placeholder="Search users" ng-model="vm.filterString"></h3>
+
+    <div>
+        <ul ng-repeat="user in vm.users | filter: vm.filterString" class="list-group">
+            <li class="list-group-item">
+                <div><img src="{{user.avatar_url}}" height="50px;">
+
+                    <div><a ui-sref="user-detail">{{user.login}}</a></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

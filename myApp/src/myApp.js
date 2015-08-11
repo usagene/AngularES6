@@ -9,14 +9,17 @@ import * as UserModule from './features/users/usermodule';
 angular.module('myApp', ['ui.router'])
     .config(['$urlRouterProvider', '$stateProvider',
         function ($urlRouterProvider, $stateProvider) {
-            $urlRouterProvider.otherwise('/myApp/src/index.html');
+            $urlRouterProvider.otherwise('/list');
 
             $stateProvider
                 .state('user-list', {
-                    url:"/myApp/src/index.html"
+                    url:"/list",
+                    templateUrl: "/myApp/src/features/users/user-list.html",
+                    controller: UserModule.ctrl,
+                    controllerAs: "vm"
                 })
-                .state('user-list.detail', {
-                    url: "#detail",
+                .state('user-detail', {
+                    url: "/detail",
                     templateUrl: "/myApp/src/features/users/user-detail.html",
                     controller: UserModule.ctrl,
                     controllerAs: 'userDetail'

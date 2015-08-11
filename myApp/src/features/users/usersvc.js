@@ -11,6 +11,10 @@ class UserSvc {
         return this.$http.get('https://api.github.com/users')
             .then(response=>response.data);
     }
+
+    getUserDetails(){
+        return this.$http.get('https://api.github.com/users');
+    }
 }
 
 UserSvc.$inject = ['$http'];
